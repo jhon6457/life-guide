@@ -2,32 +2,47 @@
 
 [中文文档](README.zh-CN.md)
 
-> Help an AI find the options, costs, and evidence that were missing from the first answer.
+> 🧭 Help AI see the technical route before it starts building.
 
-`life-guide` is a general Agent Skill for context-dependent recommendations and decisions. For questions such as “what should I choose?”, “how should I start?”, “which route is better?”, or “can this claim be trusted?”, it first identifies the conditions that could change the answer. It then investigates existing tools, alternative routes, applicable rules, and supporting evidence before giving a conclusion with trade-offs and a next step.
+`life-guide` is a general Agent Skill for technical choices, research-heavy tasks, and context-dependent decisions. It helps an AI slow down before it jumps to a tool, library, workflow, or confident recommendation.
 
-## Why this is more than asking an AI one more time
+## When AI is moving too fast
 
-AI makes getting an answer fast. The valuable information is often in the search path behind that answer: knowing where to look, what keywords to use, and how to trace a secondary lead back to a primary source. `life-guide` organizes that path. Search engines find entry points. Official documentation, laws, source code, and statistics establish facts. Reddit, X, Weibo, and Xiaohongshu surface real discussions and failure signals. YouTube can show practical operations and version differences. Key claims are then traced back to sources that support them.
+You ask:
 
-The skill does not promise to list every possible option or treat popularity as evidence. It helps users see routes that were outside their initial view, distinguish verified facts from unknowns, and choose a low-cost next step.
+> “I want a technical animation with particles, captions, and audio reactivity.”
 
-**Good fit:** personalized recommendations, multi-option comparisons, tool research, rules and exception checks, source reliability checks, and important or hard-to-reverse decisions.
+A typical answer may immediately list a few tools. `life-guide` first checks what can change the route:
 
-**Not a good fit:** simple facts, pure writing or translation, polishing, and questions that do not depend on the user's situation. Those should be answered directly without starting the full process.
+- 🎞️ Is this for real-time interaction or final video rendering?
+- ⚙️ Will it run on the web, in a compositor, inside a 3D tool, or as a desktop app?
+- 🧩 Do you need high frame rate, low latency, maximum visual quality, or repeatable renders?
+- 🔎 Which versions, dependencies, and host limits could block delivery?
+- 🧪 What is the smallest demo that can validate the biggest risk first?
 
-## Understand it in 30 seconds
+Then it compares Canvas, WebGL, 3D, video-composition, and other relevant routes; checks primary sources; and gives you a practical next step.
 
-Input: **“I want to start a small business, but I can only think of opening a bubble tea shop. What should I do?”**
+## What `life-guide` changes
 
-| | A common answer without the skill | Expected shape with `life-guide` |
-|---|---|---|
-| Starting point | Compare bubble tea, coffee, and clothing stores | Ask for the conditions that could change the answer, such as goal, budget, location, and available time |
-| Candidate space | Reorder the shop types already mentioned | Investigate ingredients, equipment, delivery, maintenance, distribution, upstream suppliers, and other participation points |
-| Evidence | Experience-based advice without sources | Give sources and query dates for decision-changing facts, or mark them as unverified |
-| Ending | “You could consider a franchise” | Give a main route, alternatives, opportunity costs, a low-cost validation step, and stop conditions |
+- 🧭 Expands the option space beyond the first tool or workflow that comes to mind.
+- 🔎 Separates facts, user statements, assumptions, inferences, and unknowns.
+- 📚 Traces decision-changing claims back to official documentation, rules, source code, or original data.
+- ⚖️ Compares cost, time, performance, maintenance, reversibility, and opportunity cost.
+- 🧪 Designs a low-cost validation step before a full build.
+- 🛑 States stop conditions and what new information would change the recommendation.
 
-This is a **behavior illustration**, not a live market study. It does not prove that any route has demand or fits every user. A longer response example is in [`skills/life-guide/references/examples.md`](skills/life-guide/references/examples.md).
+Ask it:
+
+> “Should this be Canvas, WebGL, or a 3D workflow?”<br>
+> “Can my current stack support it reliably?”<br>
+> “Is this animation library still worth using?”<br>
+> “What should I prototype first?”
+
+Simple question? Answer directly. Complex build? Map the route first. High-impact choice? Check the evidence and failure branches before recommending a path.
+
+`life-guide` does not promise one perfect answer or an exhaustive list. It helps AI and people see more of the real options before committing.
+
+The longer behavior example is in [`skills/life-guide/references/examples.md`](skills/life-guide/references/examples.md).
 
 ## Installation
 
@@ -54,7 +69,7 @@ ls .claude/skills/life-guide/SKILL.md
 After installation, try these two boundary checks:
 
 1. Ask “Which country is Paris in?” The skill should answer directly without asking about career goals or starting an investigation.
-2. Ask “I want to start a small business, but I can only think of a bubble tea shop.” The skill should restate what is known, identify key gaps, and ask prioritized questions instead of immediately returning a shop-type ranking.
+2. Ask “I want to make a technical animation with particles and audio reactivity.” The skill should restate what is known, identify route-changing gaps, and ask prioritized questions instead of immediately naming a tool.
 
 If both behaviors match, discovery and boundaries are working in that host. If they do not, submit the host, version, input, and actual output according to [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
