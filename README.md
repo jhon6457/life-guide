@@ -46,12 +46,12 @@ The longer behavior example is in [`skills/life-guide/references/examples.md`](s
 
 ## Output structure since 6.1.0 (fixed four sections)
 
-Since 6.1.0, complex and multi-option answers follow a fixed order: **data → mind map → summary → action**.
+Since 6.1.0, complex and multi-option answers follow a fixed order: **data → mind map → summary → action or exploration**.
 
 1. **Data section first**: grouped by market / tech / cost / rules; every key data point carries source, query date, scope, source strength, and whether it is a primary source. No judgments mixed into the data.
 2. **Mind map after the data**: covers conclusion, key branches, evidence or unknowns, and the next step. Falls back to a plain-text tree when Mermaid cannot render.
 3. **Compact summary**: judgment body within ~300 characters, at most 1–2 key numbers, each line labeled as verified / user-stated / inferred / unknown / experienced judgment.
-4. **Action section last**: 100–200 characters, always containing what to do this week, cost, how to verify, the current recommendation, what would switch the route, and the biggest unknown.
+4. **Action or exploration section last**: when the user wants to act, give a 100–200 character action section with what to do this week, cost, verification, current recommendation, switch conditions, and biggest unknown. When the user is exploring directions, give a concise exploration section with unexpanded routes, the unknowns that could change the ranking, and what to investigate next.
 
 Two hard rules take effect at the same time:
 
@@ -100,7 +100,7 @@ If both behaviors match, discovery and boundaries are working in that host. If t
 ## Evidence and maintenance documents
 
 - With/without-skill comparison and boundaries: [`docs/ab-evidence.md`](docs/ab-evidence.md)
-- Release audit for the current candidate: [`docs/release-audit-6.1.1.md`](docs/release-audit-6.1.1.md)
+- Release audit for the current candidate: [`docs/release-audit-6.1.2.md`](docs/release-audit-6.1.2.md)
 - Release plan and post-release observations: [`docs/release-plan.md`](docs/release-plan.md)
 - Behavior cases and run records: [`tests/`](tests/)
 - Package boundaries and maintenance rules: [`docs/architecture/package-boundaries.md`](docs/architecture/package-boundaries.md)
