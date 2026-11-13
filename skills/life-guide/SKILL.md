@@ -3,7 +3,7 @@ name: life-guide
 description: "Use when a user asks for a recommendation, route comparison, current tools, applicable rules, source reliability, or a personalized decision where missing options, assumptions, or constraints may change the answer. 适用于“推荐什么、怎么开始、有哪些选择、是否有现成工具、信息是否可靠、有没有更好路线”等需要调查、个人化判断或多方案比较的问题；单个事实、纯写作和不需要情境判断的问题不启动完整流程。"
 license: MIT
 metadata:
-  version: "6.1.3"
+  version: "6.1.4"
   display_name: "减少信息差"
 ---
 
@@ -86,7 +86,7 @@ metadata:
 
 ### 4. 按用户条件比较并建议
 
-默认给 2–3 条实质不同的路线，每条说清**适用条件、主要成本、主要风险、放弃或牺牲什么**，四要素缺一不可；字段以 `references/output-contract.md` §3 为准。先排除明显违反硬约束的候选；只有证据足够才给主推荐，并同时写明**什么条件下备选路线更好**、**什么新信息会触发切换**。禁止把多个出口包装成一条主线，禁止列表面不同、实际相同的方案。
+默认给 2–3 条实质不同的路线，每条说清**适用条件、主要成本、主要风险、放弃或牺牲什么**，并说明核心机制或责任位置差异，字段以 `references/output-contract.md` §3 为准。先区分用户提出的路线和 AI 独立扩展的路线，再排除明显违反硬约束的候选；同时写每条路线可能成立与可能失败的理由，按证据强弱判断。只有证据足够才给主推荐，并同时写明**什么条件下备选路线更好**、**什么新信息会触发切换**。根据用户已知处境给“如果……那么……”的条件化引导，不替用户猜偏好。禁止把多个出口包装成一条主线，禁止列表面不同、实际相同的方案。
 
 比较两条以上路线、或用户要求“最优/更稳”时，按 `references/decision-framework.md`「机会成本、相对耗时与稳健性」逐行说明：放弃什么及能否收回、各阶段投入与日历时间、最脆弱环节与失效条件。只列方案自身好处，或拿一条方案的学习时间比另一条的总周期，都不算完成比较；低影响、明显可逆的小事可省略这三行。
 
