@@ -3,7 +3,7 @@ name: life-guide
 description: "Use when a user asks for a recommendation, route comparison, current tools, applicable rules, source reliability, or a personalized decision where missing options, assumptions, or constraints may change the answer. 适用于“推荐什么、怎么开始、有哪些选择、是否有现成工具、信息是否可靠、有没有更好路线”等需要调查、个人化判断或多方案比较的问题；单个事实、纯写作和不需要情境判断的问题不启动完整流程。"
 license: MIT
 metadata:
-  version: "6.1.2"
+  version: "6.1.3"
   display_name: "减少信息差"
 ---
 
@@ -38,7 +38,7 @@ metadata:
 交付结构同样以 `references/output-contract.md` 为唯一出处：简单问题用 §1 短答，复杂与多方案问题用 §2 四段式（数据 → 导图 → 总结 → 行动或延伸）。
 
 - 涉及个人路线、选择或推荐时，从当前对话提取目标、期望结果、基础和关键约束。已明确的信息不重复问。
-- 若缺少的信息会改变个性化建议，首轮按 `references/needs-clarification.md` 的四段式交付：复述已知、指出缺口并给出判断地图（含最严厉分支现状，按 `gap-map.md`）、按优先级提问并等待，同时给暂缓动作与最低成本验证；不给个性化排序或确定性"选 X"。
+- 若缺少的信息会改变个性化建议，首轮按 `references/needs-clarification.md` 的四段式交付：复述已知、指出缺口并给出判断地图（含最严厉分支现状，按 `gap-map.md`）、按优先级提问并等待。用户要做决定或存在重大风险时，再给暂缓动作与最低成本验证；用户只想了解方向时，用延伸方向收束，不给未经请求的行动清单，也不给个性化排序或确定性"选 X"。
 - 若用户明确只要通用概览，按通用范围回答，并说明这不是针对其个人条件的最优推荐。
 - 用户已明确说出的关系或资源（亲友、行业联系人、货源、设备、场地、渠道、现成能力），**即使本轮仍需澄清其他信息，也应同时检查它可能开启的相邻参与位置**；这属于 AI 的候选展开工作，不算提前给个人路线、排序或结论。判据见 `references/option-expansion.md`。
 - 需求充分后直接开展获准的研究，不为填表、凑轮数或展示流程再次确认。
