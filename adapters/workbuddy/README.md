@@ -32,7 +32,7 @@ python adapters/workbuddy/build_host_package.py --zip
 产物在 `dist/workbuddy/`（已在 `.gitignore` 中，不进版本库）：
 
 - `life-guide/`：顶层字段已改写、引用已改为 `@references/…`
-- `life-guide-workbuddy-6.1.3.zip`：上传用，顶层为 `life-guide/`
+- `life-guide-workbuddy-6.1.4.zip`：上传用，顶层为 `life-guide/`
 
 标准包不受影响，宿主字段不回写 `skills/life-guide/SKILL.md`。
 
@@ -45,7 +45,7 @@ python adapters/workbuddy/build_host_package.py --zip
 
 ## 本地安装
 
-把 `skills/life-guide/` 整个目录复制到 WorkBuddy 技能目录，目录名保持 `life-guide`。当前已核对 WorkBuddy 安装副本与 6.1.3 源包逐文件一致；自动触发、跨宿主与真实用户效果仍未实测。此前残留的 6 个私有 / 开发文件已移出并备份，未进入运行包。
+把 `skills/life-guide/` 整个目录复制到 WorkBuddy 技能目录，目录名保持 `life-guide`。当前已核对 WorkBuddy 安装副本与 6.1.4 源包逐文件一致；自动触发、跨宿主与真实用户效果仍未实测。此前残留的 6 个私有 / 开发文件已移出并备份，未进入运行包。
 
 自动触发、参考文件按需读取、工具与子 Agent 行为仍未实测，未实测的能力一律标为未验证。
 
