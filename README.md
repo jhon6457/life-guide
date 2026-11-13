@@ -44,6 +44,22 @@ Simple question? Answer directly. Complex build? Map the route first. High-impac
 
 The longer behavior example is in [`skills/life-guide/references/examples.md`](skills/life-guide/references/examples.md).
 
+## Output structure since 6.1.0 (fixed four sections)
+
+Since 6.1.0, complex and multi-option answers follow a fixed order: **data → mind map → summary → action**.
+
+1. **Data section first**: grouped by market / tech / cost / rules; every key data point carries source, query date, scope, source strength, and whether it is a primary source. No judgments mixed into the data.
+2. **Mind map after the data**: covers conclusion, key branches, evidence or unknowns, and the next step. Falls back to a plain-text tree when Mermaid cannot render.
+3. **Compact summary**: judgment body within ~300 characters, at most 1–2 key numbers, each line labeled as verified / user-stated / inferred / unknown / experienced judgment.
+4. **Action section last**: 100–200 characters, always containing what to do this week, cost, how to verify, the current recommendation, what would switch the route, and the biggest unknown.
+
+Two hard rules take effect at the same time:
+
+- **Time-sensitive claims must be searched first**: prices, versions, laws, policies, platform rules, software and tools, jobs and market trends, public sentiment — verify against current sources before judging; when the latest data cannot be obtained, write "unverified as of the query date" instead of "the latest data shows".
+- **Source strength in four tiers**: primary source / reliable repost / summary only / original not obtained. Secondhand material must never be written up as "verified original text"; summary-only material is a lead, not a basis for conclusions.
+
+Simple facts, pure writing, and stable common knowledge still get a short direct answer — no forced web search, no forced diagram.
+
 ## Installation
 
 **Copy the entire `life-guide/` directory, not only `SKILL.md`.** Reference files are loaded as needed. If they are missing, some rules cannot be reached. The standard package is in [`skills/life-guide/`](skills/life-guide/). A release ZIP is also available, with `life-guide/` as its top-level directory after extraction.
@@ -76,13 +92,15 @@ If both behaviors match, discovery and boundaries are working in that host. If t
 ## Verification boundary
 
 - **Structural checks do not prove outcome quality.** Static checks only verify package structure, references, and rule consistency.
-- The current version has local structural and behavior records. Automatic triggering, cross-host behavior, cross-model behavior, and real-user outcomes remain unverified. Platform status is listed in [`adapters/`](adapters/), and untested items are labeled as unverified.
+- The current version has structural checks and limited local self-test records. Stable behavior across sessions, automatic triggering, cross-host behavior, cross-model behavior, and real-user outcomes remain unverified. Platform status is listed in [`adapters/`](adapters/), and untested items are labeled as unverified.
+- Behavior depends on the model, host, loading mode, references actually read, and available tools. A same-model stability claim requires the same conditions and at least three repeated runs. A model without web access cannot verify current information.
 - Historical behavior records come from 5.x batches. They used one host, one model, manual loading, and human judgment across versions, so they cannot be generalized to the current version or every host.
 - Tool installation, account login, and external writes require explicit user approval. The skill does not promise that a tool is virus-free or immune from account restrictions.
 
 ## Evidence and maintenance documents
 
 - With/without-skill comparison and boundaries: [`docs/ab-evidence.md`](docs/ab-evidence.md)
+- Release audit for the current candidate: [`docs/release-audit-6.1.1.md`](docs/release-audit-6.1.1.md)
 - Release plan and post-release observations: [`docs/release-plan.md`](docs/release-plan.md)
 - Behavior cases and run records: [`tests/`](tests/)
 - Package boundaries and maintenance rules: [`docs/architecture/package-boundaries.md`](docs/architecture/package-boundaries.md)
