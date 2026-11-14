@@ -100,7 +100,7 @@ If both behaviors match, discovery and boundaries are working in that host. If t
 ## Evidence and maintenance documents
 
 - With/without-skill comparison and boundaries: [`docs/ab-evidence.md`](docs/ab-evidence.md)
-- Release audit for the current candidate: [`docs/release-audit-6.1.8.md`](docs/release-audit-6.1.8.md)
+- Release audit for the current candidate: [`docs/release-audit-6.1.9.md`](docs/release-audit-6.1.9.md)
 - Release plan and post-release observations: [`docs/release-plan.md`](docs/release-plan.md)
 - Behavior cases and run records: [`tests/`](tests/)
 - Package boundaries and maintenance rules: [`docs/architecture/package-boundaries.md`](docs/architecture/package-boundaries.md)
