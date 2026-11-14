@@ -1,9 +1,9 @@
 ---
 name: life-guide
-description: "Use when a user asks for a recommendation, route comparison, current tools, applicable rules, source reliability, or a personalized decision where missing options, assumptions, or constraints may change the answer. 适用于“推荐什么、怎么开始、有哪些选择、是否有现成工具、信息是否可靠、有没有更好路线”等需要调查、个人化判断或多方案比较的问题；单个事实、纯写作和不需要情境判断的问题不启动完整流程。"
+description: "Use when a user asks what to choose, how to start, what options exist, whether a tool or claim is reliable, what is current, or wants a personalized recommendation where missing options, assumptions, constraints, or resources could change the answer. 适用于“推荐什么、怎么开始、怎么选、有什么路、目前最新、靠谱吗、值不值得、怎么办、有哪些现成工具”等需要调查、个人化判断、多方案比较或信息核验的问题；单个稳定事实、纯写作和不需要情境判断的问题不启动完整流程。"
 license: MIT
 metadata:
-  version: "6.1.8"
+  version: "6.1.9"
   display_name: "减少信息差"
 ---
 
