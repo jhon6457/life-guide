@@ -101,7 +101,7 @@ ls .claude/skills/life-guide/SKILL.md
 ## A/B 证据与文档
 
 - 有 / 无技能的对照证据与边界：[`docs/ab-evidence.md`](docs/ab-evidence.md)
-- 当前候选版发布前审计：[`docs/release-audit-6.1.5.md`](docs/release-audit-6.1.5.md)
+- 当前候选版发布前审计：[`docs/release-audit-6.1.6.md`](docs/release-audit-6.1.6.md)
 - 发布计划与发布后观察指标：[`docs/release-plan.md`](docs/release-plan.md)
 - 行为验收用例与运行记录：[`tests/`](tests/)（含评测协议、冻结基线与 A/B 原始输出）
 - 包边界与维护规则：[`docs/architecture/package-boundaries.md`](docs/architecture/package-boundaries.md)
